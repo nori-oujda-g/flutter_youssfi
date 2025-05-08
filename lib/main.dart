@@ -6,6 +6,7 @@ import 'package:flutter_youssfi/ui/pages/meteo.page.dart';
 
 // https://www.youtube.com/watch?v=DvAq5dKN5uk&list=PLzFUEeWdXH-0xB7f8dxMCcwZKIdLaLMRL
 // 00:48:00
+//v2
 void main() => runApp(MyApp());
 
 // pour générer il suffit d'ecrire : st
