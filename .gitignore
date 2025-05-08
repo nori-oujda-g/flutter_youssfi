@@ -1,0 +1,93 @@
+*.ipr
+#######################################################################
+# Android Studio will place build artifacts here
+# Visual Studio Code related
+**/ios/Flutter/flutter_export_environment.sh
+app.*.map.json
+.history
+.build/
+.packages
+**/ios/**/profile
+**/android/local.properties
+**/doc/api/
+*.iws
+**/ios/**/Pods/
+**/ios/Flutter/flutter_assets/
+/android/app/debug
+**/ios/**/DerivedData/
+.vscode/
+**/ios/Flutter/app.flx
+**/android/**/GeneratedPluginRegistrant.*
+yarn.lock
+.flutter-plugins-dependencies
+**/ios/**/*.pbxuser
+**/ios/**/*.mode2v3
+pubspec.lock
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+/android/app/profile
+**/gradle-wrapper.jar
+**/ios/**/Icon?
+**/ios/Flutter/App.framework
+**/ios/Flutter/Generated.xcconfig
+/build/
+**/android/captures/
+**/ios/**/xcuserdata
+*.class
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/web/**/lib/generated_plugin_registrant.dart
+**/ios/Flutter/Flutter.framework
+*.iml
+# Obfuscation related
+**/ios/ServiceDefinitions.json
+**/ios/**/*.moved-aside
+.swiftpm/
+# Symbolication related
+**/ios/**/*.mode1v3
+**/ios/Flutter/app.zip
+!**/ios/**/default.mode1v3
+!**/ios/**/default.pbxuser
+**/ios/**/.symlinks/
+.dart_tool/
+# Miscellaneous
+svc-keyfile.json
+.DS_Store
+# Lockfiles
+.atom/
+**/ios/**/.vagrant/
+**/android/gradlew.bat
+# iOS/XCode related
+*.swp
+#.vscode/
+# is commented out by default.
+# Flutter/Dart/Pub related
+# Android related
+.pub/
+# The .vscode folder contains launch configuration and tasks you configure in
+# Exceptions to above rules.
+**/android/.gradle
+**/ios/**/*.perspectivev3
+.pub-cache/
+*.pyc
+.buildlog/
+migrate_working_dir/
+**/ios/Flutter/.last_build_id
+**/ios/.generated/
+/android/app/release
+!**/ios/**/default.perspectivev3
+.idea/
+.flutter-plugins
+**/ios/**/*sync/
+*.log
+# IntelliJ related
+app.*.symbols
+# Web related
+Podfile.lock
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+.svn/
+# Service account files
+# VS Code which you may wish to be included in version control, so this line
+**/android/gradlew
+!**/ios/**/default.mode2v3
+#####auther
+git-instructions.txt
