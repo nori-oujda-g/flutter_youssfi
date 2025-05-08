@@ -91,3 +91,4 @@ Podfile.lock
 !**/ios/**/default.mode2v3
 #####auther
 git-instructions.txt
+.gitignore
