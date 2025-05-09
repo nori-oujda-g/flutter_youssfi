@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       drawer: MyMenu(), //drawer => menu
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('abdennour home'),
+        title: Text('abdennour home 2'),
       ),
       body: Center(
         child: Text(
