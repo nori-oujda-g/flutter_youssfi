@@ -3,6 +3,7 @@ import 'package:flutter_youssfi/ui/pages/HomePage.page.dart';
 import 'package:flutter_youssfi/ui/pages/counter.page.dart';
 import 'package:flutter_youssfi/ui/pages/galery.page.dart';
 import 'package:flutter_youssfi/ui/pages/meteo.page.dart';
+import 'package:flutter_youssfi/ui/pages/users.page.dart';
 
 // https://www.youtube.com/watch?v=DvAq5dKN5uk&list=PLzFUEeWdXH-0xB7f8dxMCcwZKIdLaLMRL
 // 00:48:00
@@ -17,12 +18,13 @@ class MyApp extends StatelessWidget {
     // return MaterialApp(home: SimpleText());
     // return MaterialApp(home: Mycenter());
     return MaterialApp(
-      title: 'exp2',
+      title: 'flutter youssfi',
       routes: {
         '/': (context) => HomePage(),
         '/meteo': (context) => Meteo(),
         '/galery': (context) => Galery(),
         '/counter': (context) => Counter(),
+        '/users': (context) => Users(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
