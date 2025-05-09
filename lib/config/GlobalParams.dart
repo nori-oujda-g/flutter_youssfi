@@ -7,5 +7,6 @@ class Globalparams {
     {'title': 'Galery', 'icon': Icons.image, 'route': '/galery'},
     {'title': 'Counter', 'icon': Icons.countertops, 'route': '/counter'},
     {'title': 'Users', 'icon': Icons.supervised_user_circle, 'route': '/users'},
+    {'title': 'Searsh', 'icon': Icons.search_sharp, 'route': '/searsh'},
   ];
 }

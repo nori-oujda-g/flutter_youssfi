@@ -3,6 +3,7 @@ import 'package:flutter_youssfi/ui/pages/HomePage.page.dart';
 import 'package:flutter_youssfi/ui/pages/counter.page.dart';
 import 'package:flutter_youssfi/ui/pages/galery.page.dart';
 import 'package:flutter_youssfi/ui/pages/meteo.page.dart';
+import 'package:flutter_youssfi/ui/pages/searsh.page.dart';
 import 'package:flutter_youssfi/ui/pages/users.page.dart';
 
 // https://www.youtube.com/watch?v=DvAq5dKN5uk&list=PLzFUEeWdXH-0xB7f8dxMCcwZKIdLaLMRL
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/galery': (context) => Galery(),
         '/counter': (context) => Counter(),
         '/users': (context) => Users(),
+        '/searsh': (context) => Searsh(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
