@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_youssfi/provider/counterCubitState.dart';
 
-class Counter extends StatefulWidget {
-  @override
-  State<Counter> createState() => _CounterState();
-}
-
-class _CounterState extends State<Counter> {
-  int counter = 0;
-
-  // const Counter({super.key});
+class CounterCubit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print('build simple counter .....');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('COUNTER'),
+        title: Text('COUNTER CUBIT'),
       ),
-      body: Center(
-        child: Text(
-          'page counter \ncounter value = $counter ',
-          style: TextStyle(fontSize: 25, color: Colors.indigo),
-        ),
+      body: BlocBuilder<CounterCubitState, int>(
+        builder:
+            (context, state) => Center(
+              child: Text(
+                'page counter \ncounter value =$state',
+                style: TextStyle(fontSize: 25, color: Colors.indigo),
+              ),
+            ),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -29,18 +25,14 @@ class _CounterState extends State<Counter> {
           FloatingActionButton(
             child: Icon(Icons.add),
             onPressed: () {
-              setState(() {
-                counter++;
-              });
+              context.read<CounterCubitState>().increment();
             },
           ),
           SizedBox(width: 10),
           FloatingActionButton(
             child: Icon(Icons.remove),
             onPressed: () {
-              setState(() {
-                counter--;
-              });
+              context.read<CounterCubitState>().decrement();
             },
           ),
         ],

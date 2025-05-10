@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_youssfi/ui/pages/user.page.dart';
 import 'package:http/http.dart' as http;
 
 class Users extends StatefulWidget {
@@ -19,6 +20,7 @@ class _UsersState extends State<Users> {
   int totalPages = 0;
   int pageSize = 20;
   ScrollController scrollController = new ScrollController();
+  List<dynamic> users = [];
   OutlineInputBorder getBorder(Color color) {
     return OutlineInputBorder(
       borderSide: BorderSide(width: 2, color: color),
@@ -42,6 +44,7 @@ class _UsersState extends State<Users> {
             print('url = $url');
             print('response =  ${response.body}');
             this.data = json.decode(response.body);
+            this.users.addAll(data['items']);
             if (this.data['total_count'] % this.pageSize == 0)
               this.totalPages = this.data['total_count'] ~/ this.pageSize;
             else
@@ -128,6 +131,8 @@ class _UsersState extends State<Users> {
                 IconButton(
                   onPressed: () {
                     setState(() {
+                      users = [];
+                      currentPage = 0;
                       this.query = myState.text;
                       this._searsh(this.query);
                       print(this.query);
@@ -138,35 +143,52 @@ class _UsersState extends State<Users> {
               ],
             ),
             Expanded(
-              child: ListView.builder(
+              // child: ListView.builder(
+              child: ListView.separated(
+                separatorBuilder:
+                    (context, index) => Divider(height: 2, color: defaultColor),
                 controller: scrollController,
-                itemCount: data == null ? 0 : data['items'].length,
+                itemCount: users.length,
                 itemBuilder:
-                    (context, index) => ListTile(
-                      title: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 30,
-                                backgroundImage: NetworkImage(
-                                  this.data['items'][index]['avatar_url'],
+                    (context, index) => MouseRegion(
+                      cursor: SystemMouseCursors.text,
+                      child: ListTile(
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: NetworkImage(
+                                    users[index]['avatar_url'],
+                                  ),
                                 ),
-                              ),
-                              _sp(),
-                              Text(this.data['items'][index]['login']),
-                            ],
-                          ),
-
-                          CircleAvatar(
-                            backgroundColor: defaultColor,
-                            foregroundColor: Colors.white,
-                            child: Text(
-                              this.data['items'][index]['score'].toString(),
+                                _sp(),
+                                Text(users[index]['login']),
+                              ],
                             ),
-                          ),
-                        ],
+
+                            CircleAvatar(
+                              backgroundColor: defaultColor,
+                              foregroundColor: Colors.white,
+                              child: Text(users[index]['score'].toString()),
+                            ),
+                          ],
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => User(
+                                    login: users[index]['login'],
+                                    defaultColor: defaultColor,
+                                    avatar_url: users[index]['avatar_url'],
+                                  ),
+                            ),
+                          );
+                        },
                       ),
                     ),
               ),

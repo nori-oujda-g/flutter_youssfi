@@ -29,6 +29,9 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   http:
+  provider:
+  bloc:
+  flutter_bloc:
   flutter:
     sdk: flutter
   # dans google on cherche la version convenable pour http https://www.google.com/search?q=http+flutter+dependency
