@@ -25,7 +25,8 @@ class ContactBuilderBloc extends Bloc<ContactEvent, ContactState> {
       final response = await http.get(Uri.parse(baseUrl));
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
-        final contacts = data.map((json) => Contact.fromJson(json)).toList();
+        final List<Contact> contacts =
+            data.map((json) => Contact.fromJson(json)).toList();
         emit(ContactLoaded(contacts));
       } else {
         emit(ContactError('Erreur lors du chargement'));
@@ -48,7 +49,7 @@ class ContactBuilderBloc extends Bloc<ContactEvent, ContactState> {
       emit(ContactActionSuccess());
       add(FetchBuilderContacts());
     } catch (e) {
-      emit(ContactError(e.toString()));
+      emit(ContactError('erreur d ajout : ${e.toString()}'));
     }
   }
 
