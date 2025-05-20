@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youssfi/mvc/view/contacts/contact_builder_view.dart';
 import 'package:flutter_youssfi/ui/pages/HomePage.page.dart';
 import 'package:flutter_youssfi/ui/pages/counter.page.dart';
 import 'package:flutter_youssfi/ui/pages/counterBlock.page.dart';
@@ -32,6 +33,11 @@ class Globalparams {
     },
     {'title': 'Users', 'icon': Icons.supervised_user_circle, 'route': '/users'},
     {'title': 'Searsh', 'icon': Icons.search_sharp, 'route': '/searsh'},
+    {
+      'title': 'Contacts mvc',
+      'icon': Icons.contact_page,
+      'route': '/contactsPage',
+    },
   ];
   static Map<String, Widget Function(dynamic)> routes = {
     '/': (context) => HomePage(),
@@ -43,5 +49,7 @@ class Globalparams {
     '/counterBloc': (context) => CounterBloc(),
     '/users': (context) => Users(),
     '/searsh': (context) => Searsh(),
+    // '/contactsPage': (context) => ContactsPage(),
+    '/contactsPage': (context) => ContactBuilderView(),
   };
 }
